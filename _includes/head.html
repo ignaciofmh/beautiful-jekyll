@@ -127,5 +127,288 @@
   <!-- Staticman -->
   <link rel="stylesheet" href="{{ "/css/staticman.css" | relative_url }}" />
   {% endif %}
+  <style>
+            
+    #Bolivia
+    {
+        position: absolute;
+        left: 45%;
+        top: 5%;
+        display:none;
+        font-family:Arial;
+        font-size:3vw, 36px;
+        border:1px solid #808080;
+        background-color:#9793932d;
+    }    
+    #Brasil
+    {
+        position: absolute;
+        left: 45%;
+        top: 5%;
+        display:none;
+        font-family:Arial;
+        font-size:3vw, 36px;
+        border:1px solid #808080;
+        background-color:#f1f1f1;
+    }    
+    #Chile
+    {
+        position: absolute;
+        left: 45%;
+        top: 5%;
+        display:none;
+        font-family:Arial;
+        font-size:3vw, 36px;
+        border:1px solid #808080;
+        background-color:#f1f1f1;
+    }    
+    #Costa-Rica
+    {
+        position: absolute;
+        left: 45%;
+        top: 5%;
+        display:none;
+        font-family:Arial;
+        font-size:3vw, 36px;
+        border:1px solid #808080;
+        background-color:#f1f1f1;
+    }    
+    #Peru
+    {
+        position: absolute;
+        left: 45%;
+        top: 5%;
+        display:none;
+        font-family:Arial;
+        font-size:3vw, 36px;
+        border:1px solid #808080;
+        background-color:#f1f1f1;
+    }    
+    #Puerto-Rico
+    {
+        position: absolute;
+        left: 45%;
+        top: 5%;
+        display:none;
+        font-family:Arial;
+        font-size:3vw, 36px;
+        border:1px solid #808080;
+        background-color:#f1f1f1;
+    }    
+    #Republica-Dominicana
+    {
+        position: absolute;
+        left: 45%;
+        top: 5%;
+        display:none;
+        font-family:Arial;
+        font-size:3vw, 36px;
+        border:1px solid #808080;
+        background-color:#f1f1f1;
+    }    
+    #Venezuela
+    {
+        position: absolute;
+        left: 45%;
+        top: 5%;
+        display:none;
+        font-family:Arial;
+        font-size:3vw, 36px;
+        border:1px solid #808080;
+        background-color:#f1f1f1;
+    }
+    * {
+        box-sizing: border-box;
+    }
 
+    ul {
+        list-style-type: none;
+    }
+
+    body {
+        font-family: "Lato", sans-serif;
+    }
+
+    * {
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .wrapper {
+        background-color: #dfe6e9;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+    }
+
+    .calendar {
+        margin: auto;
+        width: 600px;
+        background-color: #fff;
+        box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.2);
+   
+    }
+
+    .month {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 40px 30px;
+        text-align: center;
+        background-color: #2ecc71;
+        color: #fff;
+    }
+
+    .weekdays {
+        background-color: #27ae60;
+        color: #fff;
+        padding: 7px 0;
+        display: flex;
+    }
+
+    .days {
+        font-weight: 300;
+        padding: 10px 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .weekdays div,
+    .days div {
+        text-align: center;
+        width: 14.28%;
+    }
+
+    .days div {
+        padding: 10px 0;
+        margin-bottom: 10px;
+        transition: all 0.4s;
+    }
+
+    .prev_date {
+        color: #999;
+    }
+
+    .today {
+        background-color: #27ae60;
+        color: #fff;
+    }
+    
+    .event {
+        background-color: #d81313;
+        color: #fff;
+    }
+
+    .days div:hover {
+        cursor: pointer;
+        background-color: #dfe6e9
+    }
+
+    .prev,
+    .next {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 23px;
+        background-color: rgba(0, 0, 0, 0.1);
+        transition: all 0.4s;
+    }
+
+    .prev:hover,
+    .next:hover {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    #month {
+        font-size: 30px;
+        font-weight: 500;
+    }
+</style>
+<script type="text/javascript">
+
+    //Funcion que muestra el div en la posicion del mouse
+    function showdiv(event, pais)
+    {
+        //determina un margen de pixels del div al raton
+        margin=5;
+    
+        //La variable IE determina si estamos utilizando IE
+        var IE = document.all?true:false;
+        //Si no utilizamos IE capturamos el evento del mouse
+        if (!IE) document.captureEvents(Event.MOUSEMOVE)
+    
+        var tempX = 0;
+        var tempY = 0;
+    
+        if(IE)
+        { //para IE
+            tempX = event.clientX + document.body.scrollLeft;
+            tempY = event.clientY + document.body.scrollTop;
+        }else{ //para netscape
+            tempX = event.pageX;
+            tempY = event.pageY;
+        }
+        if (tempX < 0){tempX = 0;}
+        if (tempY < 0){tempY = 0;}
+
+        if(pais=='Chile'){
+                
+            document.getElementById('Chile').style.top = (tempY+margin);
+            document.getElementById('Chile').style.left = (tempX+margin);
+            document.getElementById('Chile').style.display='block';
+
+        }else if(pais=='Bolivia'){
+                
+            document.getElementById('Bolivia').style.top = (tempY+margin);
+            document.getElementById('Bolivia').style.left = (tempX+margin);
+            document.getElementById('Bolivia').style.display='block';
+
+        }else if(pais=='Brasil'){
+            
+            document.getElementById('Brasil').style.top = (tempY+margin);
+            document.getElementById('Brasil').style.left = (tempX+margin);
+            document.getElementById('Brasil').style.display='block';
+
+        }else if(pais=='Costa-Rica'){
+            
+            document.getElementById('Costa-Rica').style.top = (tempY+margin);
+            document.getElementById('Costa-Rica').style.left = (tempX+margin);
+            document.getElementById('Costa-Rica').style.display='block';
+
+        }else if(pais=='Peru'){
+            
+            document.getElementById('Peru').style.top = (tempY+margin);
+            document.getElementById('Peru').style.left = (tempX+margin);
+            document.getElementById('Peru').style.display='block';
+
+        }else if(pais=='Puerto-Rico'){
+            
+            document.getElementById('Puerto-Rico').style.top = (tempY+margin);
+            document.getElementById('Puerto-Rico').style.left = (tempX+margin);
+            document.getElementById('Puerto-Rico').style.display='block';
+
+        }else if(pais=='Republica-Dominicana'){
+            
+            document.getElementById('Republica-Dominicana').style.top = (tempY+margin);
+            document.getElementById('Republica-Dominicana').style.left = (tempX+margin);
+            document.getElementById('Republica-Dominicana').style.display='block';
+
+        }else if(pais=='Venezuela'){
+            
+            document.getElementById('Venezuela').style.top = (tempY+margin);
+            document.getElementById('Venezuela').style.left = (tempX+margin);
+            document.getElementById('Venezuela').style.display='block';
+
+        }
+    
+
+        return;
+    }
+  
+</script>
 </head>
