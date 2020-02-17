@@ -5,6 +5,177 @@ subtitle: Este Blog pretende informar cuales son las próximas elecciones en los
 use-site-title: true
 ---
 
+
+
+<body onload="renderDate()">
+  <div id="Bolivia">
+      Bolivia Elecciones generales
+      <br /><span id="posicion"></span>
+  </div>
+  <div id="Brasil">
+      Brasil Elecciones municipales
+      <br /><span id="posicion"></span>
+  </div>
+  <div id="Chile">
+      Chile Plebiscito nacional 2020
+      <br /><span id="posicion"></span>
+  </div>
+  <div id="Costa-Rica">
+      Costa Rica Elecciones municipales
+      <br /><span id="posicion"></span>
+  </div>
+  <div id="Peru">
+      Perú Elecciones parlamentarias extraordinarias
+      <br /><span id="posicion"></span>
+  </div>
+  <div id="Puerto-Rico">
+      Puerto Rico Elecciones generales
+      <br /><span id="posicion"></span>
+  </div>
+  <div id="Republica-Dominicana">
+      República Dominicana Elecciones generales
+      <br /><span id="posicion"></span>
+  </div>
+  <div id="Venezuela">
+      Venezuela Elecciones parlamentarias
+      <br /><span id="posicion"></span>
+  </div>
+
+  <div class="wrapper">
+      <div class="calendar">
+          <div class="month">
+              <div class="prev" onclick="moveDate('prev')">
+                  <span>&#10094;</span>
+              </div>
+              <div>
+                  <h2 id="month"></h2>
+                  <p id="date_str"></p>
+              </div>
+              <div class="next" onclick="moveDate('next')">
+                  <span>&#10095;</span>
+              </div>
+          </div>
+          <div class="weekdays">
+              <div>Dom</div>
+              <div>Lun</div>
+              <div>Mar</div>
+              <div>Mie</div>
+              <div>Jue</div>
+              <div>Vie</div>
+              <div>Sab</div>
+          </div>
+          <div class="days">
+
+          </div>
+      </div>
+  </div>
+  <script>
+      
+  
+
+      var dt = new Date();
+      function renderDate() {
+          dt.setDate(1);
+          var day = dt.getDay();
+          var today = new Date();
+          var endDate = new Date(
+              dt.getFullYear(),
+              dt.getMonth() + 1,
+              0
+          ).getDate();
+
+          var prevDate = new Date(
+              dt.getFullYear(),
+              dt.getMonth(),
+              0
+          ).getDate();
+          var months = [
+              "Enero",
+              "Febrero",
+              "Marzo",
+              "Abril",
+              "Mayo",
+              "Junio",
+              "Julio",
+              "Augusto",
+              "Septiembre",
+              "Octubre",
+              "Noviembre",
+              "Diciembre"
+          ]
+          document.getElementById("month").innerHTML = months[dt.getMonth()];
+          document.getElementById("date_str").innerHTML = dt.toDateString();
+
+
+
+          var cells = "";
+          for (x = day; x > 0; x--) {
+              cells += "<div class='prev_date'>" + (prevDate - x + 1) + "</div>";
+          }
+          console.log(dt.getMonth());
+          for (i = 1; i <= endDate; i++) {
+          if (i == today.getDate() && dt.getMonth() == today.getMonth()){ 
+              cells += "<div class='today'>" + i + "</div>";
+              
+          }else if(i == 26 && dt.getMonth() == 3){
+              
+              cells += "<div class='event' onmouseover=\"showdiv(event,'Chile');\" onmousemove=\"showdiv(event,'Chile');\" onmouseout=\"javascript:document.getElementById('Chile').style.display='none';\">" + 
+                  "<a href=\"https://es.wikipedia.org/wiki/Plebiscito_nacional_de_Chile_de_2020\" >" + i + "</a></div>";   
+              
+          }else if(i == 3 && dt.getMonth() == 4){
+              
+              cells += "<div class='event' onmouseover=\"showdiv(event,'Bolivia');\" onmousemove=\"showdiv(event,'Bolivia');\" onmouseout=\"javascript:document.getElementById('Bolivia').style.display='none';\">" + 
+                  "<a href=\"https://es.wikipedia.org/wiki/Elecciones_generales_de_Bolivia_de_2020\" >" + i + "</a></div>";   
+              
+          }else if(i == 4 && dt.getMonth() == 7){
+              
+              cells += "<div class='event' onmouseover=\"showdiv(event,'Brasil');\" onmousemove=\"showdiv(event,'Brasil');\" onmouseout=\"javascript:document.getElementById('Brasil').style.display='none';\">" + 
+                  "<a href=\"https://es.wikipedia.org/wiki/Elecciones_municipales_de_Brasil_de_2020\" >" + i + "</a></div>";   
+              
+          }else if(i == 2 && dt.getMonth() == 1){
+              
+              cells += "<div class='event' onmouseover=\"showdiv(event,'Costa-Rica');\" onmousemove=\"showdiv(event,'Costa-Rica');\" onmouseout=\"javascript:document.getElementById('Costa-Rica').style.display='none';\">" + 
+                  "<a href=\"https://es.wikipedia.org/wiki/Elecciones_municipales_de_Costa_Rica_de_2020\" >" + i + "</a></div>";   
+              
+          }else if(i == 26 && dt.getMonth() == 0){
+              
+              cells += "<div class='event' onmouseover=\"showdiv(event,'Peru');\" onmousemove=\"showdiv(event,'Peru');\" onmouseout=\"javascript:document.getElementById('Peru').style.display='none';\">" + 
+                  "<a href=\"https://es.wikipedia.org/wiki/Elecciones_parlamentarias_extraordinarias_de_Perú_de_2020\" >" + i + "</a></div>";   
+              
+          }else if(i == 3 && dt.getMonth() == 10){
+              
+              cells += "<div class='event' onmouseover=\"showdiv(event,'Puerto-Rico');\" onmousemove=\"showdiv(event,'Puerto-Rico');\" onmouseout=\"javascript:document.getElementById('Puerto-Rico').style.display='none';\">" + 
+                  "<a href=\"https://es.wikipedia.org/wiki/Elecciones_generales_de_Puerto_Rico_de_2020\" >" + i + "</a></div>";   
+              
+          }else if(i == 17 && dt.getMonth() == 4){
+              
+              cells += "<div class='event' onmouseover=\"showdiv(event,'Republica-Dominicana');\" onmousemove=\"showdiv(event,'Republica-Dominicana');\" onmouseout=\"javascript:document.getElementById('Republica-Dominicana').style.display='none';\">" + 
+                  "<a href=\"https://es.wikipedia.org/wiki/Elecciones_generales_de_la_República_Dominicana_de_2020\" >" + i + "</a></div>";   
+              
+          }else if(i == 6 && dt.getMonth() == 11){
+              
+              cells += "<div class='event' onmouseover=\"showdiv(event,'Venezuela');\" onmousemove=\"showdiv(event,'Venezuela');\" onmouseout=\"javascript:document.getElementById('Venezuela').style.display='none';\">" + 
+                  "<a href=\"https://es.wikipedia.org/wiki/Elecciones_parlamentarias_de_Venezuela_de_2020\" >" + i + "</a></div>";   
+              
+          }else 
+              cells += "<div>" +i + "</div>";
+      }
+          document.getElementsByClassName("days")[0].innerHTML = cells;
+
+      }
+
+      function moveDate(para) {
+          if(para == "prev") {
+              dt.setMonth(dt.getMonth() - 1);
+          } else if(para == 'next') {
+              dt.setMonth(dt.getMonth() + 1);
+          }
+          renderDate();
+      }
+  </script>
+</body>
+
+
 <div class="posts-list">
   {% for post in paginator.posts %}
   <article class="post-preview">
