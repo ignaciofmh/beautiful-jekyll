@@ -23,7 +23,8 @@ bigimg: https://www.elbrifin.com/wp-content/uploads/2019/10/banner-vota-2.jpg
             <td>Chile</td>
             <td>26 de abril de 2020</td>
             <td>Plebiscito nacional de 2020</td>
-            <td>https://es.wikipedia.org/wiki/Plebiscito_nacional_de_Chile_de_2020</td>
+            <td><a href="https://es.wikipedia.org/wiki/Plebiscito_nacional_de_Chile_de_2020"><img src='https://thumbs.dreamstime.com/b/bandera-cuadrada-de-chile-131005171.jpg' width='32px' height='32px' /></a>
+            </td>
         </tr>
         <tr>
             <td>2</td>
