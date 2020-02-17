@@ -8,9 +8,12 @@ use-site-title: true
 
 
 <body onload="renderDate()">
+  
+
+<div class="posts-list">
   <div id="Bolivia">
-      Bolivia Elecciones generales
-      <br /><span id="posicion"></span>
+    Bolivia Elecciones generales
+    <br /><span id="posicion"></span>
   </div>
   <div id="Brasil">
       Brasil Elecciones municipales
@@ -71,7 +74,7 @@ use-site-title: true
   </div>
   <script>
       
-  
+
 
       var dt = new Date();
       function renderDate() {
@@ -175,7 +178,7 @@ use-site-title: true
   </script>
 
 
-<div class="posts-list">
+
   {% for post in paginator.posts %}
   <article class="post-preview">
     <a href="{{ post.url | relative_url }}">
@@ -240,4 +243,4 @@ use-site-title: true
   {% endif %}
 </ul>
 {% endif %}
-</body>
+</body> 
