@@ -1,16 +1,22 @@
 ---
 layout: page
-title: About me
-subtitle: Why you'd want to go on a date with me
+title: Acerca de Mi
+subtitle: ¿Quien es Ignacio?
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+Ignacio es un joven programador con mente de emprendedor, entre sus fortalezas destaca su:
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+-Capacidad de resolver problemas.
+-Empatia.
+-Compromiso.
+-Compañerismo.
+    
 
 What else do you need?
 
-### my history
+### Actualmente
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+Actualmente estoy dedicado a la implementación de una App móvil para Android e IOS, esta app busca potenciar y digitalizar a las pymes de Santiago y crear una comunidad de apoyo entre si.
+
+Hace pocos días comencé un blog personal para documentar mi experiencia como desarrollador con patrón bloc y mi emprendimiento, el blog está en ingles ponerlo en práctica.
+[Mi Blog](https://amprendiendode0.blogspot.com)
