@@ -20,7 +20,7 @@ Trabajos actualmente en línea:
 Credenciales: User: 18620869, Pass: Password12
 - [VinasdeChile](http://vinasdechile.cl/Pruebas/)
 <br>
-Actualmente solo tengo estas 2 aplicaciones en línea, ambos desarrollados con PhP y el de vinas de chile hecho con un Framework, llamado Yii2, la empresa para la cual trabajaba quebró y su dominio actualmente no está en línea [GyDSerice](http://gydservice.cl).
+En estos momentos solo tengo estas 2 aplicaciones en línea, ambos desarrollados con PhP y el de vinas de chile hecho con un Framework, llamado Yii2, la empresa para la cual trabajaba quebró y su dominio actualmente no está en línea [GyDSerice](http://gydservice.cl).
 
 ### Actualmente
 
